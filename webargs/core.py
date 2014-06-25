@@ -92,7 +92,7 @@ class Arg(object):
         ret = value
         # First convert the value
         try:
-            ret = self.use(self.type(value))
+            ret = self.type(self.use(value))
         except ValueError as error:
             raise ValidationError(self.error or error)
         # Then call validation function
